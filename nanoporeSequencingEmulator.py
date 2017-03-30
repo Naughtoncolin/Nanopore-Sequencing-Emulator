@@ -74,8 +74,8 @@ class sequencingEmulator:
 		'''Plots expected currents as a trace on a graph using current for the y-axis, and the different quadromers
 		in order on the x-axis.'''
 		for i in range(len(self.traceCurrentpA)): #Determines x points based on total # of quadromers, with 10 points for each.
-			self.xAxisPoints.extend([i, i+0.1, i+0.2, i+0.3, i+0.4, i+0.5, i+0.6, i+0.7, i+0.8, i+0.9,])
-			self.yAxisPoints.extend(np.random.normal(self.traceCurrentpA[i], self.standardDeviationpA[i], 10))
+			self.xAxisPoints.extend([ i+k*0.01 for k in range(100)])
+			self.yAxisPoints.extend(np.random.normal(self.traceCurrentpA[i], self.standardDeviationpA[i], 100))
 
 		ticks= [(i+0.5) for i in range(len(self.traceCurrentpA))] #Determines placement of each quadromer under its expected current trace.
 		plt.plot(self.xAxisPoints, self.yAxisPoints) #Plots points in backround.
