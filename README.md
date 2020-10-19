@@ -1,2 +1,2 @@
 # Nanopore-Sequencing-Emulator
-Models a strand of DNA passing through a biological nanopore.
+Models a strand of ssDNA passing through a biological nanopore.
